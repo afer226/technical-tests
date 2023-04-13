@@ -45,8 +45,9 @@ class PerformanceTests:
         """
         start = time.time()
 
-        # Remove this line and implement your method
-        self.add(value_to_add)
+        if value_to_add not in self._data:
+            self._data.append(value_to_add)
+            print(f"Added {value_to_add}")
 
         end = time.time()
 

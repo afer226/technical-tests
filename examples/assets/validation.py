@@ -36,13 +36,17 @@ class Person:
         """
 
         # TODO: Add all validations you think are important here
-        """
-        Exammple
 
-        if amount_to_withdraw > 10:
-            error_message = "You may not withdraw more than 10 dollars."
+        if amount_to_withdraw <= 0:
+            error_message = "You may not withdraw an amount less than or equal to 0."
             raise ValidationException(error_message)
-        """
+        
+        limit = self.amount + self.overdraft
+
+        if amount_to_withdraw > limit:
+            error_message = "You may not withdraw more than {} dollars.".format(limit)
+            raise ValidationException(error_message)
+        
         pass
 
     def withdraw(self, amount_to_withdraw: decimal) -> decimal:
@@ -54,7 +58,6 @@ class Person:
         """
 
         self._withdraw_validations(amount_to_withdraw)
-
         self.amount -= amount_to_withdraw
 
         return self.amount

@@ -1,9 +1,9 @@
 from examples import (
-    example1 as strackTrace,
-    example2 as performance,
+    # example1 as strackTrace,
+    # example2 as performance,
     example3 as inheritance,
-    example4 as validation,
-    example5 as abstract,
+    # example4 as validation,
+    # example5 as abstract,
 )
 
 
@@ -13,11 +13,11 @@ def main():
 
     Please see the read me for more details on what needs to be done.
     """
-    strackTrace.run()
-    performance.run()
+    # strackTrace.run()
+    # performance.run()
     inheritance.run()
-    validation.run()
-    abstract.run()
+    # validation.run()
+    # abstract.run()
 
 
 main()

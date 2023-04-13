@@ -5,8 +5,8 @@ from examples.assets import abstract
 
 def scenario1() -> None:
     """Example Usage"""
-    myClass = abstract.A()
-    myClass.d("Hello World", "Sam Powell")
+    myClass = abstract.Computer()
+    myClass.display_message("Hello World", "Sam Powell")
 
 
 def run():

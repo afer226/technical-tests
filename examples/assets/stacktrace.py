@@ -36,7 +36,7 @@ class ErrorTracing:
 
     def _check_even(self, value_to_validated: int) -> int:
         if value_to_validated % 2 == 0:
-            raise ValueError("The value to add may not be even")
+            raise ValueError("The value to add is uneven")
 
     def _check_is_not_33(self, value_to_validated: int):
         if value_to_validated == 33:

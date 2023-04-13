@@ -1,37 +1,42 @@
-class A:
-    """
-    Something, something talking stick?
-
-    Document Me!
-
-    Give the class, its attributes, methods and arguments better names.
-
-    Please note, _x() are denoted because they are internal methods and would not
-    expected to be called outside of the class.
-
-    Raises:
-        Exception: Document Me
-    """
+class Computer:
 
     # Give attributes better names
-    x = ""
+    active_user = ""
 
-    def _b(self, c):
-        if not self.x:
-            self.x = c
-        elif self.x != c:
+    def _sign_in(self, new_user):
+        if not self.active_user:
+            self.active_user = new_user
+        elif self.active_user != new_user:
             raise Exception("A different user is using this system.")
 
-    def _c(self):
-        if self.x:
-            self.x = ""
+    def _sign_out(self):
+        if self.active_user:
+            self.active_user = ""
 
-    def d(self, e, f):
-        if not e:
+    def display_message(self, content, identity):
+        if not content:
             raise Exception("Message has no contents")
 
-        self._b(f)
+        self._sign_in(identity)
 
-        print(f"{self.x} - {e}")
+        print(f"{self.active_user} - {content}")
 
-        self._c()
+        self._sign_out()
+
+class SignInException(Exception):
+    """Exception raised when user sign-on fails."""
+
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return repr(self.message)
+
+class MessageException(Exception):
+    """Exception raised when message is not displayed"""
+
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return repr(self.message)
